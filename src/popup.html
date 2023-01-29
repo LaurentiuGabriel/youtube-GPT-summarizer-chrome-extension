@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Simple Extension</title>
+  </head>
+  <body>
+    <button id="my-button">Click me</button>
+    <script>
+      document.getElementById("my-button").addEventListener("click", function() {
+        chrome.runtime.sendMessage({
+          type: "buttonClicked"
+        });
+      });
+    </script>
+  </body>
+</html>
+
+
+

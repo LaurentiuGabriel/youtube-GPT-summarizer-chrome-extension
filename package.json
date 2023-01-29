@@ -1,0 +1,32 @@
+{
+  "name": "youtube-summarizer-extension",
+  "version": "1.0.0",
+  "description": "A Chrome extension for summarizing YouTube videos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test",
+    "build": "webpack --config webpack.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LaurentiuGabriel/youtube-summarizer-extension.git"
+  },
+  "keywords": [
+    "youtube",
+    "summarizer",
+    "chrome",
+    "extension"
+  ],
+  "author": "Laurentiu Raducu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LaurentiuGabriel/youtube-summarizer-extension/issues"
+  },
+  "homepage": "https://github.com/LaurentiuGabriel/youtube-summarizer-extension#readme",
+  "dependencies": {
+    "chrome-extension-async": "^3.4.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^5.0.1"
+  }
+}
