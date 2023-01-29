@@ -1,1 +1,0 @@
-# youtube-summarizer-extension
