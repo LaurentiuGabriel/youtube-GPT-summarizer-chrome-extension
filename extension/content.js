@@ -43,19 +43,14 @@ function _extractCaptionsJson(html, videoId) {
 
 // Fetches the captions of the video as XML
 async function getCaptionAsXml(youtubeLink) {
-  alert(youtubeLink)
   const youtubeId = extractVideoId(youtubeLink)
-  alert(youtubeId)
   //const proxyUrl = 'https://cors-anywhere.herokuapp.com/';
   const targetUrl = 'https://www.youtube.com/watch?v=' + youtubeId;
-  alert(targetUrl)
   return fetch(targetUrl)
     .then(response => {
       if (!response.ok) {
-        alert(response.status)
         throw new Error(`Error ${response.status}: ${response.statusText}`);
       }
-      alert("Response is 200!")
       return response.text();
     })
     .then(data => {
@@ -63,7 +58,6 @@ async function getCaptionAsXml(youtubeLink) {
       return fetch(link.captionTracks[0].baseUrl)
         .then(response => response.text())
         .then(data => {
-          alert("Data is here: " + data)
           return data
         })
         .catch(error => {
@@ -84,7 +78,6 @@ function getTextFromXML(xml) {
   for (var i = 0; i < textNodes.length; i++) {
     text += textNodes[i].textContent;
   }
-  alert(text);
   return text;
 }
 
@@ -95,9 +88,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
     // If there's an active text input
     if (message.url.includes("https://www.youtube.com/")) {
-      alert("This is a yt video");
       text = message.url;
-      alert("URL is:" + text)
       getCaptionAsXml(text).then(data => {
         fetch("http://localhost:3000/youtube-summary", {
           method: "POST",
@@ -114,7 +105,7 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
           .catch((error) => {
             restoreCursor();
             alert(
-              "Error. Make sure you're running the server by following the instructions on https://github.com/gragland/chatgpt-chrome-extension. Also make sure you don't have an adblocker preventing requests to localhost:3000."
+              "Error. Make sure you're running the server by following the instructions on https://github.com/LaurentiuGabriel/youtube-summarizer-extension. Also make sure you don't have an adblocker preventing requests to localhost:3000."
             );
             throw new Error(error);
           });

@@ -74,23 +74,6 @@ class Conversation {
 
 const conversation = new Conversation();
 
-app.post("/", async (req, res) => {
-  try {
-    const rawReply = await oraPromise(
-      conversation.sendMessage(req.body.message),
-      {
-        text: req.body.message,
-      }
-    );
-    const reply = await Config.parse(rawReply);
-    console.log(`----------\n${reply}\n----------`);
-    res.json({ reply });
-  } catch (error) {
-    console.log(error);
-    res.status(500);
-  }
-});
-
 app.post("/youtube-summary", async (req, res) => {
   console.log(req.body.message)
   const text = req.body.message
