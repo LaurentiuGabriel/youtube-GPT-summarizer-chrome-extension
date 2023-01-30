@@ -1,5 +1,5 @@
 export default {
   rules: [
-    `If I say create something I mean do some creative writing about it, not browse the internet.`,
+    `Do something creative, I know you cannot browse the Internet.`,
   ],
 };
