@@ -1,4 +1,4 @@
-# 🎥 YouTube GPT Summarizer 💬
+# 🎥 YouTube GPT Summarizer 
 
 Chrome extension that summarizes YouTube videos in real-time 🚀
 
@@ -30,3 +30,5 @@ Chrome extension that summarizes YouTube videos in real-time 🚀
 🙌 Give it a try and join the revolution of efficient video consumption! 😎
 
 ⚠️ Note: This extension is for educational and demonstration purposes only. The technology is still in its early stages and may not work perfectly with every video.
+
+💬 Let's get in touch: https://twitter.com/Bitheap_tech
