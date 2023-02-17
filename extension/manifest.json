@@ -1,8 +1,10 @@
 {
   "manifest_version": 3,
-  "name": "Youtube GPT Summarizer",
+  "name": "Terms and Conditions Checker",
   "version": "1.0.0",
-  "permissions": ["contextMenus"],
+  "permissions": [
+    "contextMenus"
+  ],
   "icons": {
     "16": "icon.png",
     "48": "icon.png",

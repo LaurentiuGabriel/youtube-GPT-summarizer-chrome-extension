@@ -48,7 +48,7 @@ class Conversation {
   }
 
   async summarize(msg) {
-    const request = "Summarize the following youtube video in maximum 3 sentences: "
+    const request = "Act as a top lawyer. Check those terms and conditions and tell me if there's something fishy: "
     const res = await gptApi.sendMessage(
       request + msg,
       this.conversationID && this.parentMessageID
@@ -74,7 +74,7 @@ class Conversation {
 
 const conversation = new Conversation();
 
-app.post("/youtube-summary", async (req, res) => {
+app.post("/eula-summary", async (req, res) => {
   console.log(req.body.message)
   const text = req.body.message
   try {

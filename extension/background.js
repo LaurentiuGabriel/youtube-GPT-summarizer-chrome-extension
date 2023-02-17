@@ -1,12 +1,10 @@
 // Create a context menu item
 chrome.contextMenus.create({
-  id: "youtube-summary",
-  title: "Summarize Youtube Video",
+  id: "terms",
+  title: "Terms and Conditions Checker",
   contexts: ["all"],
 });
 
 chrome.contextMenus.onClicked.addListener((info, tab) => {
-  if (info.menuItemId === "youtube-summary") {
-    chrome.tabs.sendMessage(tab.id, { type: "SUMMARIZE", url: tab.url });
-  }
+  chrome.tabs.sendMessage(tab.id, { type: "CHECK", url: tab.url });
 });
